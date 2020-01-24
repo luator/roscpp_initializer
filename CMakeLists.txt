@@ -4,9 +4,13 @@ project(roscpp_initializer)
 set(BOOST_PYTHONLIB python-py35)
 
 find_package(catkin REQUIRED roscpp)
-find_package(Boost 1.58 REQUIRED COMPONENTS system filesystem ${BOOST_PYTHONLIB})
 
-catkin_python_setup() 
+find_package(PythonInterp REQUIRED)
+find_package(PythonLibs REQUIRED)
+
+find_package(Boost 1.58 REQUIRED COMPONENTS system ${BOOST_PYTHONLIB})
+
+catkin_python_setup()
 
 catkin_package()
 
